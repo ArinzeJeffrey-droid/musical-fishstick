@@ -28,8 +28,8 @@ This project implements a payment instruction parser that supports two instructi
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd node-template
+git clone https://github.com/ArinzeJeffrey-droid/musical-fishstick
+cd musical-fishstick
 ```
 
 2. Install dependencies:
