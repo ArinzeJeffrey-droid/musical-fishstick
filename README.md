@@ -2,6 +2,37 @@
 
 A REST API that parses payment instructions, validates them against business rules, and executes transactions on provided accounts.
 
+## Project Structure
+
+```
+├── app.js                           # Main application entry point
+├── package.json                     # Dependencies and scripts
+├── .env                             # Environment configuration
+├── Procfile                         # Heroku deployment config
+│
+├── endpoints/
+│   └── payment-instructions/
+│       └── process.js               # API endpoint handler
+│
+├── services/
+│   └── payment-processor/
+│       └── parse-instruction.js     # Main parsing and business logic
+│
+├── messages/
+│   ├── index.js
+│   └── payment.js                   # Error messages
+│
+├── middlewares/                     # Middleware support
+│
+└── core/                            # Core framework modules
+    ├── express/                     # Web server
+    ├── errors/                      # Error handling
+    ├── logger/                      # Logging system
+    ├── security/                    # Security utilities
+    └── validator-vsl/               # Input validation
+```
+
+
 # Live URL
 https://musical-fishstick-1nm9.onrender.com
 
@@ -186,33 +217,3 @@ curl http://localhost:3000/payment-instructions \
 | SY01 | Missing required keyword |
 | SY02 | Invalid keyword order |
 | SY03 | Malformed instruction |
-
-## Project Structure
-
-```
-├── app.js                           # Main application entry point
-├── package.json                     # Dependencies and scripts
-├── .env                             # Environment configuration
-├── Procfile                         # Heroku deployment config
-│
-├── endpoints/
-│   └── payment-instructions/
-│       └── process.js               # API endpoint handler
-│
-├── services/
-│   └── payment-processor/
-│       └── parse-instruction.js     # Main parsing and business logic
-│
-├── messages/
-│   ├── index.js
-│   └── payment.js                   # Error messages
-│
-├── middlewares/                     # Middleware support
-│
-└── core/                            # Core framework modules
-    ├── express/                     # Web server
-    ├── errors/                      # Error handling
-    ├── logger/                      # Logging system
-    ├── security/                    # Security utilities
-    └── validator-vsl/               # Input validation
-```
